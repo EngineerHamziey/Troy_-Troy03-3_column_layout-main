@@ -1,0 +1,211 @@
+/* Disclaimer: All I have done here is to help,
+and I hope you find it helpful.
+
+
+if you notice anything wrong, feel free to contibrute/correct me
+I am not perfect, I am open to correction and suggestions and I wiling to learn more
+
+I'm sorry if I went to far on this correction,
+but I'm doing this because I hope it will help
+
+feel free to ask questions,
+you can also read more on anything giving you problem on W3 school
+
+also I'll recommend using mobile first approach next time
+
+#making it pixel perfect(making it look exactly like the given UI)is important
+but responsiveness is more important
+
+*always use mobile first approach as that will make coding the media query easy
+and make it load faster on mobile....mobile user wont have to load desktop version first
+for mobile first: your media query will look like @media (min-width: 768px) 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    /* font-size: 16px; 15px width was recommended,
+    but convert it to rem or em for responsiveness
+    15px = (15 / 16)rem = 0.9375rem */
+    font-size: 0.9375rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0, 0%, 95%);
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+h2 {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 0.8em;
+    color: hsl(0, 0%, 95%);
+}
+
+p{
+    /* In this case, it's best to define the font in the body,since it's general and the only different dude is the heading*/
+    /* font-family: 'Lexend Deca', sans-serif; */
+    margin-top: 1.7em;
+    /* line-height: 1.5;
+    I personally think the default line-height is ok
+    you don't need to reset it
+    FEEL FREE TO DO WHAT YOU THINK IS RIGHT */
+    color: hsla(0, 0%, 100%, 0.75);
+    margin-bottom: 6.4em;
+}
+
+/* button {  this has been changed to <a class="botton"*/
+.button {
+    /* In this case, it's best to define the font in the body,since it's general and the only different dude is the heading*/
+    /* font-family: 'Lexend Deca', sans-serif; */
+    padding: 1.2em 1.5rem;
+    /* to make the 'learn More' centered */
+    text-align: center;
+    /* border-radius: 21px; */
+    border-radius: 2rem;
+    /* margin-top: 6.4em;  we will add margin-bottom to the paragraph to replace this */
+    /* the margin-top: auto; will make the buttons stay at the
+    same level responsively */
+    margin-top: auto;
+    /* border: none; this is making the height increase 
+    when you hover instead give it a border
+     with same color as background or transparent*/
+    border: 2px solid transparent;
+    background-color: hsl(0, 0%, 95%);
+    /* to style it like button
+    i.e for the padding to work, we need to */
+    /* display: inline-block; */
+    /* use display: inline-block; so that it won't
+    spread across the whole line, it will maintain the
+    natural width as specified by the margin */
+    /* 
+    all button has been chaged to .button*/
+}
+
+
+
+/* .button:hover {
+    color: #fff;
+    background-color: transparent;
+} */
+
+
+main{
+    /* max-width: 920px; */
+    /* min-height: 500px; */
+    /* margin: 10.6em auto 0 15.5em;  this margin isnt the cool,
+    it make the page come to one-side on a device with
+    width of 1024px*/
+    /* this is better, i gave 0 to the bottom because
+    there is big margin on the  */
+    margin: 5em 3em 0 3em;
+    display: flex;
+    /* flex-direction: row; this is not necessary since that is the default */
+    overflow: hidden;
+    /* I'll advise you to always use rem or em too */
+    border-radius: 5px;
+} 
+
+section {
+    padding: 3em;
+    /* put your max-width here instead, so that it will
+    work for mobile and desktop, without changing it in 
+    the media query */
+    max-width: 20rem;
+    /* to make sure that the buttons stay on the same level/height
+    turn section to flexbox, then margin auto; */
+    display: flex;
+    flex-direction: column;
+/* these makes the img(logo) bigger, we will need to give it
+height and or width */
+}
+
+img {
+    width: 3.5rem;
+}
+
+.first {
+    background-color: hsl(31, 77%, 52%); 
+}
+.first .button{
+    color: hsl(31, 77%, 52%);
+
+}
+
+.second {
+    background-color: hsl(184, 100%, 22%);
+}
+
+.second .button {
+    color: hsl(184, 100%, 22%)
+}
+
+.third {
+    background-color:  hsl(179, 100%, 13%);
+}
+
+.third .button{
+    color: hsl(179, 100%, 13%) ;
+}
+
+
+/* .button:hover isn't working, so i had to refrence them seperately (only the color: #fff; isn't applied) */
+.first .button:hover,
+.second .button:hover,
+.third .button:hover {
+    color: #fff;
+    border: 2px solid #fff;
+    background-color: transparent; 
+}
+
+.attribution { 
+    font-size: 1rem; 
+    text-align: center; 
+    /* margin-top: 10em; this is too much margin */
+    margin-top: 3em;
+    color: #16003B;
+    /* this should be given some space in the bottom
+    i.e margin/padding in the bottom(preferably margin) */
+    margin-bottom: 1.5em;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+    text-decoration: none; 
+}
+
+/* @media (min-width: 480px) and (max-width: 768px) { */
+    /* use max-width only, it's better */
+@media (max-width: 768px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* margin-top: 6em;
+        you can't give margin to body itself, it's like you want
+        too move the body down and it's impossible */
+        /* padding: 2em;
+        padding here isn't so bad but I'll recommend putting
+        margin on the main(class="container") instead */
+    }
+
+    main{
+        /* max-width: 660px; */
+        /* width: 660px; */
+        display: flex;
+        flex-direction: column;
+        /* margin: auto; */
+    }
+
+    
+  }
